@@ -24,7 +24,7 @@ app.all("*", async (req, res, next) => {
   next();
 });
 mongoose.connect(
-  "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false",
+  "mongodb+srv://vishaldatabase:vkrathore99@cluster0.fdin6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

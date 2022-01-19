@@ -1,4 +1,4 @@
-const axios = require("axios");
+
 const UserModel = require("../modal/user");
 const ApiCount=require('../modal/count')
 
@@ -6,7 +6,7 @@ exports.add = async (req, res) => {
     try {
       console.log("body",req.body);
       const {name}=req.body
-      const updatedName = await UserModel.updateMany({ name: name }, { 
+      await UserModel.updateMany({ name: name }, { 
         name:name,
         
       }, {upsert:true} )
