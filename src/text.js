@@ -1,7 +1,7 @@
 
-import react,{useState,useEffect} from "react";
+import {useState,useEffect} from "react";
 import axios from 'axios'
-import { Row,Col,Card,CardBody, Label,Form,Input, Button } from 'reactstrap';
+import { Row,Card,CardBody, Label } from 'reactstrap';
 
 const Text=()=>{
     const getdata=async()=>{

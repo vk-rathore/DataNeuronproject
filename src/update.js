@@ -1,4 +1,4 @@
-import react,{useState,useEffect} from "react";
+import {useState,useEffect} from "react";
 import axios from 'axios'
 import { Row,Col,Card,CardBody, Label, Button,Modal,ModalBody,ModalHeader,ModalFooter,Form,Input } from 'reactstrap';
 

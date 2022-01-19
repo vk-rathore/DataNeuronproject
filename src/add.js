@@ -1,11 +1,11 @@
-import react,{useState,useEffect} from "react";
+import {useState} from "react";
 import axios from 'axios'
 import { Row,Col,Card,CardBody, Label,Form,Input, Button } from 'reactstrap';
 
 const Add=()=>{
     const addData=async()=>{
       if(process.env.NODE_ENV === "production"){
-        const data=await axios({
+        await axios({
     method: 'post',
     url: '/api/add',
     data: {
@@ -15,7 +15,7 @@ const Add=()=>{
     
   });
       }else{
-        const data=await axios({
+        await axios({
           method: 'post',
           url: 'http://localhost:5000/api/add',
           data: {
