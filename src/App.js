@@ -1,6 +1,6 @@
 // import 'react-resizable/css/style.css';
 import {Resizable} from'react-resizable';
-import { useState,useEffect } from 'react';
+import { useState} from 'react';
 import { Row,Col } from 'reactstrap';
 // import { ResizableBox } from 'react-resizable';
 // import '../css/styles.css';
