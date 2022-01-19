@@ -1,5 +1,5 @@
 const route = require("express").Router();
-const service = require("../Service/route");
+const service = require("../service/route");
 route.post("/update", async (req, res, next) => {
   try {
     const data = await service.update(req, res);
