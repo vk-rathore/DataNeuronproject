@@ -5,6 +5,15 @@ import { Row,Col,Card,CardBody, Label,Form,Input, Button } from 'reactstrap';
 
 const Text=()=>{
     const getdata=async()=>{
+      if(process.env.NODE_ENV === "production"){
+        const data=await axios({
+          method: 'get',
+          url: '/api/getdata',
+          
+        });
+        console.log({data})
+        setcount(data.data.data.count[0].current)
+      }else{
         const data=await axios({
           method: 'get',
           url: 'http://localhost:5000/api/getdata',
@@ -12,6 +21,8 @@ const Text=()=>{
         });
         console.log({data})
         setcount(data.data.data.count[0].current)
+      }
+        
         
           }
 

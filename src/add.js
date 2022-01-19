@@ -4,18 +4,31 @@ import { Row,Col,Card,CardBody, Label,Form,Input, Button } from 'reactstrap';
 
 const Add=()=>{
     const addData=async()=>{
-  const data=await axios({
+      if(process.env.NODE_ENV === "production"){
+        const data=await axios({
     method: 'post',
-    url: 'http://localhost:5000/api/add',
+    url: '/api/add',
     data: {
         name: name,
         
       }
     
   });
+      }else{
+        const data=await axios({
+          method: 'post',
+          url: 'http://localhost:5000/api/add',
+          data: {
+              name: name,
+              
+            }
+          
+        });
+      }
+  
 
   window.location.reload()
-  console.log({data})
+ 
   
     }
 

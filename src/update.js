@@ -4,22 +4,45 @@ import { Row,Col,Card,CardBody, Label, Button,Modal,ModalBody,ModalHeader,ModalF
 
 const Update=()=>{
     const updateData=async()=>{
-  const data=await axios({
-    method: 'post',
-    url: 'http://localhost:5000/api/update',
-    data: {
-        name: name,
-        updatedName:updatedName
-        
+      if(process.env.NODE_ENV === "production"){
+        const data=await axios({
+          method: 'post',
+          url: '/api/update',
+          data: {
+              name: name,
+              updatedName:updatedName
+              
+            }
+        });
+        console.log({data})
+      }else{
+        const data=await axios({
+          method: 'post',
+          url: 'http://localhost:5000/api/update',
+          data: {
+              name: name,
+              updatedName:updatedName
+              
+            }
+        });
+        console.log({data})
       }
-  });
-  console.log({data})
+
   
   getdata()
   delToggle()
     }
 
     const getdata=async()=>{
+      if(process.env.NODE_ENV === "production"){
+        const data=await axios({
+          method: 'get',
+          url: '/api/getdata',
+          
+        });
+        console.log({data})
+        setuser(data.data.data.user)
+      }else{
         const data=await axios({
           method: 'get',
           url: 'http://localhost:5000/api/getdata',
@@ -27,6 +50,8 @@ const Update=()=>{
         });
         console.log({data})
         setuser(data.data.data.user)
+      }
+       
         
           }
 
